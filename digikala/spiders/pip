@@ -1,0 +1,6 @@
+
+C:\trade-me\telescope\nedook\apiScrap\level1\digikala\digikala\spiders>copy trust_win_certs.js "C:\Program Files\Mozilla Firefox\defaults\pref"  
+The system cannot find the file specified.
+
+C:\trade-me\telescope\nedook\apiScrap\level1\digikala\digikala\spiders>copy trust_win_certs.js "C:\Program Files (x86)\Mozilla Firefox\defaults\pref" 
+The system cannot find the file specified.
