@@ -7,7 +7,7 @@ import json
 
 class DigikalaSpider(scrapy.Spider):
     # Define the name of the digikala spider
-    name = "product"
+    name = "product0"
     def __init__(self, product_urls=None, *args, **kwargs):
         # Call the parent constructor
         super(DigikalaSpider, self).__init__(*args, **kwargs)

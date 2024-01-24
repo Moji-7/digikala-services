@@ -39,7 +39,9 @@ class MySpider(scrapy.Spider):
         #print(data["data"]["orders"][0]['id'])
         cookie='Digikala:User:Token:new=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjoxMjg2NzkxLCJleHBpcmVfdGltZSI6MTcwNTQ5OTgxMSwicGF5bG9hZCI6W10sInBhc3N3b3JkX3ZlcnNpb24iOjEsInR5cGUiOiJ0b2tlbiJ9.1PO-JDop48Fa4OOxEJA-wnILjKZ34HnsV3WOc14KJew;'
         #yield from self.second_stepApi(data, cookie)
-        yield from self.step_orderDetails(data, cookie)
+        print(data)
+        yield data
+        #yield from self.step_orderDetails(data, cookie)
 
     def step_orderDetails(self, data, cookie):
         for order in data["data"]["orders"]:
