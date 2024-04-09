@@ -19,7 +19,7 @@ class CommentSpider(Spider):
 
     def start_requests(self):
         base_url = f'https://api.digikala.com/v1/product/{self.productId}/comments/' #806044
-        num_pages = 100
+        num_pages = 2 # shoulb be more
         for page in range(1, num_pages + 1):
             url = base_url + f'?page={page}'
             request = scrapy.Request(url, callback=self.parse_item)
@@ -48,10 +48,13 @@ class CommentSpider(Spider):
                 'advantages': comment['advantages'],
                 'disadvantages': comment['disadvantages'],
             }
-            print(comment_data)
+            #print(comment_data)
             self.comments_data_all.append(comment_data)
             yield {**comment_data}
 
     def closed(self, reason):
         #print(self.comments_data_all)
-        r.publish("comment", json.dumps(self.comments_data_all))
+        print('Ali')
+        print('Ali')
+        print('Ali')
+        r.publish("scrapy_comment_channel", json.dumps(self.comments_data_all))
